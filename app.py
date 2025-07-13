@@ -195,4 +195,5 @@ def delete_task(task_id):
         conn.close()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+

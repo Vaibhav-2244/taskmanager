@@ -2,8 +2,15 @@ services:
   - type: web
     name: taskmanager-api
     env: python
-    buildCommand: ""
-    startCommand: "python app.py"
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
     envVars:
-      - key: PORT
-        value: 10000
+      - key: DB_SERVER
+        value: taskmanager-1234.database.windows.net
+      - key: DB_NAME
+        value: taskmanagerdb
+      - key: DB_USER
+        value: taskadmin
+      - key: DB_PASS
+        value: task@2025
