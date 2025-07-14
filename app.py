@@ -19,8 +19,11 @@ def get_db_connection():
         )
         return pyodbc.connect(conn_str)
     except Exception as e:
+        import traceback
         print("Database connection failed:", e)
+        traceback.print_exc()
         return None
+
 
 @app.route('/')
 def home():
