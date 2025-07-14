@@ -5,5 +5,5 @@ DB_CONFIG = {
     'database': os.environ.get('DB_NAME'),
     'username': os.environ.get('DB_USER'),
     'password': os.environ.get('DB_PASS'),
-    'driver': '{ODBC Driver 18 for SQL Server}'
+    'driver': '{ODBC Driver 17 for SQL Server}'  # ← 🔁 switch to Driver 17
 }
