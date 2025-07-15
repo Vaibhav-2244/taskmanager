@@ -31,6 +31,15 @@ def home():
 
 # ------------------ User APIs ------------------
 
+@app.route('/test-db')
+def test_db():
+    conn = get_db_connection()
+    if conn:
+        return "✅ DB connection successful!"
+    else:
+        return "❌ DB connection failed!"
+
+
 @app.route('/users', methods=['POST'])
 def register_user():
     data = request.get_json()
